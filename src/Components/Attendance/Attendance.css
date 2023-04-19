@@ -1,0 +1,14 @@
+.content {
+  background-color: brown;
+  height: 200px;
+}
+.log-card {
+  width: auto;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+.log-container {
+  display: flex;
+}

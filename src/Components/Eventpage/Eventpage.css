@@ -1,0 +1,51 @@
+.event-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  height: 100%;
+}
+.eventpage-header {
+  text-align: center;
+  color: aliceblue;
+  margin-bottom: 0;
+}
+.event-card {
+  width: 200px;
+  border-radius: 30px;
+  padding-bottom: 0px;
+  background-color: aliceblue;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.register-btn {
+  color: aliceblue;
+
+  height: 35px;
+  width: 100px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    rgb(90, 172, 185),
+    rgb(75, 205, 147)
+  );
+  border-radius: 20px;
+  margin-top: 05px;
+}
+.event-img {
+  width: 100%;
+  height: 100px;
+  border-radius: 20px;
+}
+.event-img-div {
+}
+.event-details {
+  position: relative;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  bottom: 25px;
+  background-color: aliceblue;
+}

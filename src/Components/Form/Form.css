@@ -1,0 +1,40 @@
+.form-div {
+  width: 30%;
+  /* height: 600px; */
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 01px;
+  padding-bottom: 25px;
+  border-radius: 30px;
+  margin: auto;
+}
+.form-header {
+  font-size: 20px;
+}
+input {
+  height: 35px;
+  width: 90%;
+  display: block;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  border: 1px solid;
+}
+.form-container {
+  padding-top: 10px;
+}
+.submit-btn {
+  color: aliceblue;
+
+  height: 35px;
+  width: 100px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    rgb(90, 172, 185),
+    rgb(75, 205, 147)
+  );
+  border-radius: 20px;
+  margin-top: 10px;
+}
