@@ -25,3 +25,10 @@
   border-radius: 20px;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 740px) {
+  .card {
+    margin-top: 100px;
+    width: 70%;
+  }
+}
