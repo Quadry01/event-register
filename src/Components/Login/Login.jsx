@@ -1,22 +1,56 @@
-import { Link } from "react-router-dom";
 import "./Login.css";
 import { React, useState } from "react";
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [route, setRoute] = useState("");
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import { auth, provider } from "../../FirebaseConfig/Firebase";
+import { FcGoogle } from "react-icons/fc";
 
-  function LoginHandler(e) {
-    // e.preventDefault();
-    if (username === "Admin1") {
-      setRoute("Attendance");
-    } else if (username === "User1") {
-      setRoute("Eventpage");
-    } else if (username === "") {
-      alert("Please enter Username and Password");
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const SignInUser = (e) => {
+    window.location.replace("Eventpage");
+
+    e.preventDefault();
+  };
+  const SignUpAsAdmin = () => {
+    if (email === "Admin") {
+      window.location.replace("Attendance");
     } else {
-      alert("Username or Password Mismatch");
     }
-  }
+  };
+  const GoogleSignIn = async (e) => {
+    try {
+      await signInWithPopup(auth, provider);
+      if (auth.currentUser) {
+        console.log("then login", auth);
+        SignInUser();
+      } else {
+        console.log("stranger");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    e.preventDefault();
+  };
+
+  const Signup = (e) => {
+    try {
+      createUserWithEmailAndPassword(auth, email, password);
+      if (auth.currentUser) {
+        console.log("then login", auth);
+        SignInUser();
+      } else {
+        console.log("stranger");
+      }
+    } catch (error) {}
+    e.preventDefault();
+  };
+
+  console.log(process.env.REACT_APP_API_KEY);
 
   return (
     <div className="login-div">
@@ -24,25 +58,39 @@ const Login = () => {
         <h4 className="form-header">LOGIN</h4>
         <label className="username-label">Username</label>
         <input
-          value={username}
+          required
           className="name-input"
-          placeholder="Type your username"
-          type="text"
+          placeholder="Type your Email"
+          type="email"
           onChange={(e) => {
-            setUsername(e.target.value);
+            setEmail(e.target.value);
           }}
         />
         <label className="password-label">Password</label>
         <input
+          required
           className="password-input"
           placeholder="Type your password"
           type="password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
         />
-        <Link to={`/${route}`}>
-          <button onClick={LoginHandler} className="login-btn">
-            Login
+
+        <button onClick={Signup} className="login-btn">
+          Login
+        </button>
+
+        <div className="google-btn-container">
+          <FcGoogle className="glogo" />
+          <button className="googlebtn" onClick={GoogleSignIn}>
+            Sign in with Google
           </button>
-        </Link>
+        </div>
+
+        <button onClick={SignUpAsAdmin} className="login-btn">
+          Admin
+        </button>
       </form>
     </div>
   );

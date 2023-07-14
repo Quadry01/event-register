@@ -78,7 +78,12 @@ function App() {
     <div className="App">
       <>
         <myContext.Provider
-          value={{ logRegister, Events, partyName, setPartyName }}
+          value={{
+            logRegister,
+            Events,
+            partyName,
+            setPartyName,
+          }}
         >
           <Routes>
             <Route path="/" element={<Login />} />

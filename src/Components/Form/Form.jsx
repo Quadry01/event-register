@@ -7,7 +7,7 @@ const Form = () => {
   var tim = new Date();
   var registered_time = JSON.stringify(tim);
   var reg_date = registered_time.slice(1, 11);
-  var reg_time = registered_time.slice(13, 17);
+  var reg_time = registered_time.slice(12, 18);
 
   const { logRegister, partyName } = useContext(myContext);
   const [firstName, setFirstName] = useState("");
@@ -28,6 +28,7 @@ const Form = () => {
 
   function FormSubmitHandler(e) {
     logRegister.push(newCustomer);
+    // e.preventDefault();
   }
   return (
     <div className="form-container">
@@ -38,6 +39,7 @@ const Form = () => {
         </h6>
         <label className="label-first-name">First Name</label>
         <input
+          required
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           type="text"
@@ -45,6 +47,7 @@ const Form = () => {
         />
         <label className="label-last-name">Last Name</label>
         <input
+          required
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           type="text"
@@ -52,6 +55,7 @@ const Form = () => {
         />
         <label className="label-zip-code">Phone Number</label>
         <input
+          required
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           type="text"
@@ -59,6 +63,7 @@ const Form = () => {
         />
         <label className="email">Email</label>
         <input
+          required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
@@ -66,6 +71,7 @@ const Form = () => {
         />
         <label className="label-address">Adress</label>
         <input
+          required
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           type="text"
@@ -73,15 +79,15 @@ const Form = () => {
         />
         <label className="label-city">City</label>
         <input
+          required
           value={city}
           onChange={(e) => setCity(e.target.value)}
           type="text"
           placeholder="City"
         />
-        <Link to="/Thankyou">
-          <button onClick={FormSubmitHandler} className="submit-btn">
-            Submit
-          </button>
+
+        <Link onClick={FormSubmitHandler} to={"/Thankyou"}>
+          <button className="submit-btn">Submit</button>
         </Link>
       </form>
     </div>

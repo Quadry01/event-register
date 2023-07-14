@@ -6,7 +6,6 @@ import "./Attendance.css";
 
 const Attendance = () => {
   const { logRegister } = useContext(myContext);
-
   return (
     <div className="log-container">
       {logRegister.map((item, index) => (

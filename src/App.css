@@ -4,14 +4,6 @@ html {
   padding: 0;
 }
 body {
-  background-image: url("./images/Blue\ Pink\ Gradient\ Technology\ Desktop\ Wallpaper.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #f4e0b9;
   font-family: "Poppins", sans-serif;
-}
-@media screen and (max-width: 740px) {
-  body {
-    background-size: cover;
-    background-repeat: repeat;
-  }
 }

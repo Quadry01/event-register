@@ -1,7 +1,6 @@
 .event-container {
   display: inline-grid;
   grid-template-columns: auto auto auto;
-  height: 100%;
 }
 .eventpage-header {
   text-align: center;
@@ -10,11 +9,18 @@
 }
 .event-card {
   width: 200px;
+  height: 250px;
   border-radius: 30px;
   padding-bottom: 0px;
   background-color: aliceblue;
   margin: 10px 20px;
   cursor: pointer;
+  box-shadow: 1.2px 1.2px 2.2px rgba(0, 0, 0, 0.016),
+    3.3px 3.3px 5.3px rgba(0, 0, 0, 0.023),
+    6.7px 6.7px 10px rgba(0, 0, 0, 0.029),
+    12.7px 12.7px 17.9px rgba(0, 0, 0, 0.036),
+    24.8px 24.8px 33.4px rgba(0, 0, 0, 0.045),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 a {
   text-decoration: none;
@@ -48,15 +54,25 @@ a {
   bottom: 25px;
   background-color: aliceblue;
 }
-@media screen and (max-width: 740px) {
-  .event-card {
-    width: 150px;
-    /* height: 300px; */
-    /* margin: 20px 25px; */
-    margin-left: 10px;
-    background-repeat: repeat-y;
-  }
-  .register-btn {
-    margin-top: 10px;
-  }
+.main {
+  padding: 0 50px;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+.event-btn {
+  color: aliceblue;
+  height: 35px;
+  width: 100px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    rgb(90, 172, 185),
+    rgb(75, 205, 147)
+  );
+  border-radius: 20px;
+  position: relative;
+  left: 40px;
 }
