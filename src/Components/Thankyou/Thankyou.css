@@ -3,8 +3,9 @@
 }
 .card {
   background-color: rgb(253, 250, 250);
-  width: 25%;
+  width: 350px;
   margin: auto;
+  margin-top: 70px;
   padding: 50px 40px;
   text-align: center;
   border-radius: 30px;
@@ -24,6 +25,21 @@
   );
   border-radius: 20px;
   margin-top: 10px;
+  cursor: pointer;
+}
+.explore-btn {
+  color: aliceblue;
+  height: 35px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    rgb(90, 172, 185),
+    rgb(75, 205, 147)
+  );
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 740px) {

@@ -62,15 +62,20 @@
   height: 35px;
   background-color: #f5f5f5;
   display: flex;
+  cursor: pointer;
 }
 .googlebtn {
   padding: 6px;
   border: 0;
   background-color: inherit;
+  cursor: pointer;
 }
 .glogo {
   font-size: 20px;
   padding: 5px;
+}
+.loader {
+  font-size: 200px;
 }
 @media screen and (max-width: 740px) {
   .form-container-login {

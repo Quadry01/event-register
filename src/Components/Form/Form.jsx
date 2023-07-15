@@ -29,6 +29,8 @@ const Form = () => {
   function FormSubmitHandler(e) {
     logRegister.push(newCustomer);
     localStorage.setItem("logRegister", JSON.stringify(logRegister));
+    localStorage.setItem("customer", JSON.stringify(newCustomer));
+
     // e.preventDefault();
   }
   return (
@@ -59,7 +61,7 @@ const Form = () => {
           required
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          type="text"
+          type="number"
           placeholder="Phone Number"
         />
         <label className="email">Email</label>
