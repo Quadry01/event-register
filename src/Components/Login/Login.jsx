@@ -50,8 +50,6 @@ const Login = () => {
     e.preventDefault();
   };
 
-  console.log(process.env.REACT_APP_API_KEY);
-
   return (
     <div className="login-div">
       <form className="form-container-login">

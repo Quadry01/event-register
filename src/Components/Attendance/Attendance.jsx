@@ -1,14 +1,16 @@
 import React from "react";
-import { useContext } from "react";
-import { myContext } from "../../Context";
-// import user_data from "../Form/Form";
+// import { useContext } from "react";
+// import { myContext } from "../../Context";
 import "./Attendance.css";
 
 const Attendance = () => {
-  const { logRegister } = useContext(myContext);
+  var log = JSON.parse(localStorage.getItem("logRegister"));
+  console.log(log);
+  // const { logRegister } = useContext(myContext);
+
   return (
     <div className="log-container">
-      {logRegister.map((item, index) => (
+      {log.map((item, index) => (
         <div className="log-card" key={index}>
           <div>Event: {item.event}</div>
           <div>

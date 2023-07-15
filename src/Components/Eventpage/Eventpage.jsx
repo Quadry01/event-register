@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Eventpage.css";
-import Navbar from "../Navbar/Navbar";
 import { useContext } from "react";
 import { myContext } from "../../Context";
 import { auth } from "../../FirebaseConfig/Firebase";
@@ -9,7 +8,6 @@ import { signOut } from "firebase/auth";
 
 const Eventpage = () => {
   const { Events, partyName, setPartyName } = useContext(myContext);
-  console.log(Events);
 
   const Signout = () => {
     try {
@@ -20,12 +18,10 @@ const Eventpage = () => {
   };
   return (
     <div className="main">
-      <Navbar />
       <h1 className="eventpage-header">Available Events</h1>
       <Link onClick={Signout} to={"/"}>
         <button className="event-btn">Log Out</button>
       </Link>
-
       <div className="card-container">
         {Events.map((item, index) => (
           <div className="event-container" key={index}>

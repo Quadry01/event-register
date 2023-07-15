@@ -28,6 +28,7 @@ const Form = () => {
 
   function FormSubmitHandler(e) {
     logRegister.push(newCustomer);
+    localStorage.setItem("logRegister", JSON.stringify(logRegister));
     // e.preventDefault();
   }
   return (
