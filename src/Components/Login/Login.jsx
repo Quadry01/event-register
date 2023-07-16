@@ -27,7 +27,6 @@ const Login = () => {
       window.location.replace("Attendance");
     } else {
     }
-    setIsLoading1(false);
   };
   const GoogleSignIn = async (e) => {
     setIsLoading2(true);
@@ -56,7 +55,6 @@ const Login = () => {
         console.log("stranger");
       }
     } catch (error) {}
-    setIsLoading3(false);
     e.preventDefault();
   };
 
