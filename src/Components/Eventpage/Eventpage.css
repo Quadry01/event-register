@@ -14,7 +14,6 @@
   padding-bottom: 0px;
   background-color: aliceblue;
   margin: 10px 20px;
-  cursor: pointer;
   box-shadow: 1.2px 1.2px 2.2px rgba(0, 0, 0, 0.016),
     3.3px 3.3px 5.3px rgba(0, 0, 0, 0.023),
     6.7px 6.7px 10px rgba(0, 0, 0, 0.029),
@@ -28,7 +27,7 @@ a {
 }
 .register-btn {
   color: aliceblue;
-
+  cursor: pointer;
   height: 35px;
   width: 100px;
   border: 0;

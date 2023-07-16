@@ -45,7 +45,7 @@ input {
 @media screen and (max-width: 740px) {
   .form-div {
     width: 80%;
-    margin-top: 40px;
+    margin-top: 10px;
   }
   input {
     height: 40px;

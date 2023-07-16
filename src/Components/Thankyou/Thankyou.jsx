@@ -7,7 +7,6 @@ import { auth } from "../../FirebaseConfig/Firebase";
 
 const Thankyou = (e) => {
   let newperson = localStorage.getItem("customer");
-  console.log(JSON.parse(newperson).first_name);
   const Signout = () => {
     try {
       signOut(auth);
