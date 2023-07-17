@@ -10,6 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 import { SyncLoader } from "react-spinners";
 
 const Login = () => {
+  console.log(process.env);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading1, setIsLoading1] = useState(false);
