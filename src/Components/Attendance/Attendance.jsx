@@ -5,7 +5,7 @@ import "./Attendance.css";
 
 const Attendance = () => {
   var log = JSON.parse(localStorage.getItem("logRegister"));
-  console.log(log);
+
   // const { logRegister } = useContext(myContext);
 
   return (

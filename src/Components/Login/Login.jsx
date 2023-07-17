@@ -8,9 +8,10 @@ import {
 import { auth, provider } from "../../FirebaseConfig/Firebase";
 import { FcGoogle } from "react-icons/fc";
 import { SyncLoader } from "react-spinners";
+import { FirebaseError } from "firebase/app";
+import { async } from "@firebase/util";
 
 const Login = () => {
-  console.log(process.env);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading1, setIsLoading1] = useState(false);
@@ -25,8 +26,11 @@ const Login = () => {
   const SignUpAsAdmin = () => {
     setIsLoading1(true);
     if (email === "Admin") {
+      setIsLoading1(true);
       window.location.replace("Attendance");
     } else {
+      setIsLoading1(false);
+      alert("Enter login details");
     }
   };
   const GoogleSignIn = async (e) => {
@@ -35,27 +39,46 @@ const Login = () => {
       await signInWithPopup(auth, provider);
       if (auth.currentUser) {
         console.log("then login", auth);
+        console.log(auth.currentUser);
         SignInUser();
       } else {
+        setIsLoading2(false);
         console.log("stranger");
       }
     } catch (error) {
-      console.log(error);
+      if (error.code === "auth/internal-error") {
+        setIsLoading2(false);
+        alert("Check Internet conection");
+      } else if (error.code === "auth/popup-closed-by-user") {
+        setIsLoading2(false);
+
+        alert("Popup closed by user");
+      }
+      console.log(error.code);
     }
     e.preventDefault();
   };
 
-  const Signup = (e) => {
-    setIsLoading3(true);
+  const Signup = async (e) => {
     try {
-      createUserWithEmailAndPassword(auth, email, password);
+      setIsLoading3(true);
+      await createUserWithEmailAndPassword(auth, email, password);
       if (auth.currentUser) {
         console.log("then login", auth);
         SignInUser();
       } else {
-        console.log("stranger");
       }
-    } catch (error) {}
+    } catch (err) {
+      setIsLoading3(false);
+      if (err.code === "auth/invalid-email") {
+        alert("Enter a valid Email and Password");
+      } else if (email === "" && password === "") {
+        alert("Enter a valid Email and Password");
+      } else if (err.code === "auth/internal-error") {
+        alert("Check Internet conection");
+      }
+    }
+
     e.preventDefault();
   };
 
@@ -63,7 +86,7 @@ const Login = () => {
     <div className="login-div">
       <form className="form-container-login">
         <h4 className="form-header">LOGIN</h4>
-        <label className="username-label">Username</label>
+        <label className="username-label">Email</label>
         <input
           required
           className="name-input"
