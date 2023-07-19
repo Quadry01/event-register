@@ -1,12 +1,8 @@
 import React from "react";
-// import { useContext } from "react";
-// import { myContext } from "../../Context";
 import "./Attendance.css";
 
 const Attendance = () => {
   var log = JSON.parse(localStorage.getItem("logRegister"));
-
-  // const { logRegister } = useContext(myContext);
 
   return (
     <div className="log-container">

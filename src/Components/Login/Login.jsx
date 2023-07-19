@@ -1,16 +1,9 @@
 import "./Login.css";
 import { React, useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../FirebaseConfig/Firebase";
 import { FcGoogle } from "react-icons/fc";
 import { SyncLoader } from "react-spinners";
-import { FirebaseError } from "firebase/app";
-import { async } from "@firebase/util";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

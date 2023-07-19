@@ -30,8 +30,6 @@ const Form = () => {
     logRegister.push(newCustomer);
     localStorage.setItem("logRegister", JSON.stringify(logRegister));
     localStorage.setItem("customer", JSON.stringify(newCustomer));
-
-    // e.preventDefault();
   }
   return (
     <div className="form-container">
