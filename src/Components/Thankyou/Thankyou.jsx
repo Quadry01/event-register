@@ -6,7 +6,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../FirebaseConfig/Firebase";
 
 const Thankyou = (e) => {
-  let newperson = localStorage.getItem("customer");
+  let newperson = sessionStorage.getItem("customer");
   const Signout = () => {
     try {
       signOut(auth);
@@ -30,7 +30,7 @@ const Thankyou = (e) => {
         </Link>
         <Link
           onClick={() => {
-            localStorage.removeItem("customer");
+            sessionStorage.removeItem("customer");
           }}
           to={"/Eventpage"}
         >
