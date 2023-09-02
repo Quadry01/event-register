@@ -16,6 +16,7 @@ const Form = () => {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [phone, setPhone] = useState("");
+
   var newCustomer = {
     event: partyName,
     first_name: firstName + " " + lastName,
@@ -28,8 +29,8 @@ const Form = () => {
 
   function FormSubmitHandler(e) {
     logRegister.push(newCustomer);
-    localStorage.setItem("logRegister", JSON.stringify(logRegister));
-    localStorage.setItem("customer", JSON.stringify(newCustomer));
+    sessionStorage.setItem("logRegister", JSON.stringify(logRegister));
+    sessionStorage.setItem("customer", JSON.stringify(newCustomer));
   }
   return (
     <div className="form-container">

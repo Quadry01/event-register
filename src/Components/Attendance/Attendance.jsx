@@ -2,7 +2,7 @@ import React from "react";
 import "./Attendance.css";
 
 const Attendance = () => {
-  var log = JSON.parse(localStorage.getItem("logRegister"));
+  var log = JSON.parse(sessionStorage.getItem("logRegister"));
 
   return (
     <div className="log-container">

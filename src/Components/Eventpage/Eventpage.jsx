@@ -16,6 +16,7 @@ const Eventpage = () => {
       console.log(error);
     }
   };
+
   return (
     <div className="main">
       <h1 className="eventpage-header">Available Events</h1>
