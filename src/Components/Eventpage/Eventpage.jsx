@@ -7,7 +7,7 @@ import { auth } from "../../FirebaseConfig/Firebase";
 import { signOut } from "firebase/auth";
 
 const Eventpage = () => {
-  const { Events, partyName, setPartyName } = useContext(myContext);
+  const { Events1, partyName, setPartyName } = useContext(myContext);
 
   const Signout = () => {
     try {
@@ -24,7 +24,7 @@ const Eventpage = () => {
         <button className="event-btn">Log Out</button>
       </Link>
       <div className="card-container">
-        {Events.map((item, index) => (
+        {Events1.map((item, index) => (
           <div className="event-container" key={index}>
             <div className="event-card">
               <section className="event-img-div">

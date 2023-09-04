@@ -9,7 +9,7 @@ const Form = () => {
   var reg_date = registered_time.slice(1, 11);
   var reg_time = registered_time.slice(12, 18);
 
-  const { logRegister, partyName } = useContext(myContext);
+  const { logRegister1, partyName } = useContext(myContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,8 +28,8 @@ const Form = () => {
   };
 
   function FormSubmitHandler(e) {
-    logRegister.push(newCustomer);
-    sessionStorage.setItem("logRegister", JSON.stringify(logRegister));
+    logRegister1.push(newCustomer);
+    sessionStorage.setItem("logRegister", JSON.stringify(logRegister1));
     sessionStorage.setItem("customer", JSON.stringify(newCustomer));
   }
   return (
